@@ -1,2 +1,24 @@
 # My notes
-*.txt
+notes.txt
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+
+# Python cache
+pycache/
+*.pyc
+*.pyo
+*.pyd
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.DS_Store
