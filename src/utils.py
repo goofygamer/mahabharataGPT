@@ -26,3 +26,30 @@ def download_data(url, data_path):
             exit(1) # Exit if data cannot be downloaded
     else:
         print(f"Data file already exists at {data_path}")
+
+def get_batch(data, block_size, batch_size, device):
+    """
+    Generates a mini-batch of inputs x and targets y from the data.
+
+    Args:
+        data (torch.Tensor): The full dataset as a tensor.
+        block_size (int): The context length for predictions.
+        batch_size (int): The number of independent sequences per batch.
+        device (str): The device to move the tensors to ('cpu' or 'cuda').
+
+    Returns:
+        tuple[torch.Tensor, torch.Tensor]: A tuple containing the input and target tensors.
+    """
+    # Generate random starting points for the batches
+    ix = torch.randint(len(data) - block_size, (batch_size,))
+    
+    # Create the input sequences (x)
+    x = torch.stack([data[i:i+block_size] for i in ix])
+    
+    # Create the target sequences (y), which are shifted by one position
+    y = torch.stack([data[i+1:i+block_size+1] for i in ix])
+    
+    # Move tensors to the specified device
+    x, y = x.to(device), y.to(device)
+    
+    return x, y
