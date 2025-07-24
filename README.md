@@ -1,6 +1,6 @@
 # mahabharataGPT: A From-Scratch Implementation
 
-This repository contains a reproducible implementation of a decoder-only Generative Pre-trained Transformer (GPT) model, built from scratch in Python using PyTorch. The project is heavily inspired by and based on the educational "Let's build GPT" tutorial by Andrej Karpathy. Instead of the commonly used Shakespeare dataset, this project is trained on the full English text of the ancient Indian epic, the **Mahabharata**.
+This repository contains a reproducible implementation of a decoder-only Generative Pre-trained Transformer (GPT) model, built from scratch in Python using PyTorch. The project is heavily inspired by and based on the educational "Let's build GPT" tutorial by Andrej Karpathy. This project is trained on the full English text of the ancient Indian epic, the **Mahabharata**.
 
 
 <p align="center">
