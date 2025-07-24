@@ -1,0 +1,25 @@
+# --- Data and Tokenizer Parameters ---
+data_url: "https://raw.githubusercontent.com/rahulnyk/mahabharata/main/text/KaggleTilak/1-18%20books%20combined.txt"
+data_path: "data/mahabharata.txt"
+vocab_size: null # Will be determined by the tokenizer
+
+# --- Model Architecture Parameters ---
+block_size: 256     # Maximum context length for predictions
+n_embd: 384         # Embedding dimension
+n_head: 6           # Number of attention heads
+n_layer: 6          # Number of transformer blocks
+dropout: 0.2        # Dropout rate
+
+# --- Training Parameters ---
+batch_size: 64      # Number of sequences in a mini-batch
+learning_rate: 0.0003 # 3e-4
+max_iters: 5000     # Total training iterations
+eval_interval: 500  # How often to evaluate validation loss
+eval_iters: 200     # Number of iterations for evaluation
+device: 'cuda'      # 'cuda' if available, otherwise 'mps', otherwise 'cpu'
+
+# --- Inference Parameters ---
+max_new_tokens: 5000 # Number of tokens to generate
+
+# --- Checkpointing ---
+out_dir: 'checkpoints' # Directory to save model checkpoints
